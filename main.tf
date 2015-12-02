@@ -15,7 +15,7 @@ resource "aws_iam_access_key" "s3" {
 }
 
 resource "aws_iam_user_policy" "s3_policy" {
-    name = "test"
+    name = "${var.name}-s3-policy"
     user = "${aws_iam_user.s3.name}"
     policy = <<EOF
 {
